@@ -1,8 +1,8 @@
 import { mount } from "@vue/test-utils";
 import TodoApp from '@/components/TodoApp.vue'
-import { assert } from "@vue/compiler-core";
 
 describe("TodoApp.vue", () => {
+
     it("Should render todo text", () => {
         const wrapper = mount(TodoApp)
 
@@ -20,5 +20,13 @@ describe("TodoApp.vue", () => {
         await wrapper.get('[data-test="form"]').trigger('submit')
 
         expect(wrapper.findAll('[data-test="todo"]')).toHaveLength(4);
+    })
+
+    it("should change value checkbox", async () => {
+        const wrapper = mount(TodoApp)
+
+        await wrapper.get('[data-test="check"]').setValue(true)
+        
+        expect(wrapper.get('[data-test="todo"]').classes()).toContain("completed")
     })
 })
