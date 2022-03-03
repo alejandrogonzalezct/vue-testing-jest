@@ -1,25 +1,23 @@
- <template>
-  <div >
-       
-        <div 
-            v-for="todo in todos" 
-            :class="[todo.completed ? 'completed' : '']" 
-            :key="todo.id" 
-            data-test="todo"
-        >
-            
-            {{todo.text}}
-            <input 
-                data-set="check" 
-                type="checkbox" 
-                v-model="todo.completed" 
-                
-            />
-        </div>
-         <form data-test="form" @submit.prevent="createTodo">
-            <input data-test="new-todo" v-model="newTodo"/>
-        </form>
+<template>
+  <div>
+    <div
+      v-for="todo in todos"
+      :key="todo.id"
+      data-test="todo"
+      :class="[todo.completed ? 'completed' : '']"
+    >
+      {{ todo.text }}
+      <input
+        type="checkbox"
+        v-model="todo.completed"
+        data-test="todo-checkbox"
+      />
     </div>
+
+    <form data-test="form" @submit.prevent="createTodo">
+      <input data-test="new-todo" v-model="newTodo" />
+    </form>
+  </div>
 </template>
 
 <script>

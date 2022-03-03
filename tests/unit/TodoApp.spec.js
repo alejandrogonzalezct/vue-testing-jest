@@ -25,8 +25,8 @@ describe("TodoApp.vue", () => {
     it("should change value checkbox", async () => {
         const wrapper = mount(TodoApp)
 
-        await wrapper.get('[data-test="check"]').setValue(true)
-        
-        expect(wrapper.get('[data-test="todo"]').classes()).toContain("completed")
+        await wrapper.get('[data-test="todo-checkbox"]').setValue(true)
+
+        expect(wrapper.get('[data-test="todo"]').classes()).toContain('completed')
     })
 })
