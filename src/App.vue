@@ -1,15 +1,18 @@
 <template>
   <Navbar/>
   <TodoApp/>
+  <Parent/>
 </template>
 <script>
 import TodoApp from '@/components/TodoApp.vue'
 import Navbar from '@/components/Nav.vue'
+import Parent from '@/components/parent-child/Parent.vue'
 export default {
   name: 'App',
   components: {
     TodoApp,
-    Navbar
+    Navbar,
+    Parent
   }
 }
 </script>
