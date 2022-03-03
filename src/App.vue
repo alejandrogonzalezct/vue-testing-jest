@@ -1,12 +1,15 @@
 <template>
+  <Navbar/>
   <TodoApp/>
 </template>
 <script>
 import TodoApp from '@/components/TodoApp.vue'
+import Navbar from '@/components/Nav.vue'
 export default {
   name: 'App',
   components: {
-    TodoApp
+    TodoApp,
+    Navbar
   }
 }
 </script>
